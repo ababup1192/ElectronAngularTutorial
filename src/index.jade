@@ -2,12 +2,17 @@ doctype html
 html(lang="ja" ng-app)
   head
     meta(charset="UTF-8")
-    title AngularJS: Tutorial: 0
+    title Google Phone Gallery
     script require('electron-connect').client.create()
     script(src='./js/lib/angular.min.js', charset='UTF-8')
     link(rel='stylesheet', href='./css/lib/bootstrap.min.css')
-    
-    
+    link(rel='stylesheet', href='./css/app.css')
   body
-    p Nothing here {{'yet' + '!'}}
-    p 1 + 2 = {{1 + 2}}
+    p Total number of phones: 2
+    ul
+      li
+        span Nexus S
+        p Fast just got faster with Nexus S.
+      li
+        span Motorola XOOM™ with Wi-Fi
+        p Next, Next Generation trablet.
