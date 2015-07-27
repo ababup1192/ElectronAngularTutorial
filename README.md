@@ -11,4 +11,10 @@
 
 ## Launch application
 
-    $ npm run start
+    $ npm start
+
+## Unit Test
+
+    $ npm test
+    (Open another terminal)
+    $ npm start
