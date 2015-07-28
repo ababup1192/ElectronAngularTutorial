@@ -4,15 +4,18 @@ html(lang="ja" ng-app="phonecatApp")
     meta(charset="UTF-8")
     title Google Phone Gallery
     script require('electron-connect').client.create()
-    // script(src='./js/lib/jquery.min.js', charset='UTF-8')
-    // script(src='./js/lib/bootstrap.min.js', charset='UTF-8')
     script(src='./js/lib/angular.min.js', charset='UTF-8')
     script(src='./js/controller.js', charset='UTF-8')
     link(rel='stylesheet', href='./css/lib/bootstrap.min.css')
     link(rel='stylesheet', href='./css/app.css')
   body(ng-controller="PhoneListCtrl")
-    p Total number of phones: {{phones.length}}
-    ul
-      li(ng-repeat="phone in phones")
-        span {{phone.name}}
-        p {{phone.snippet}}
+    .container-fluid
+      .row
+        .col-xs-2
+          |Search: 
+          input(ng-model="query")
+        .col-xs-10
+          ul.phones
+            li(ng-repeat="phone in phones | filter:query")
+              span {{phone.name}}
+              p {{phone.snippet}}

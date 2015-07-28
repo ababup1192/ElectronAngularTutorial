@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "gulp start",
-    "test":  "node node_modules/karma/bin/karma start test/karma.conf.js"
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "webdriver-update": "./node_modules/protractor/bin/webdriver-manager update",
+    "protractor": "protractor test/protractor-conf.js"
   },
   "author": "ababup1192",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.6",
-    "main-bower-files": "^2.9.0"
+    "main-bower-files": "^2.9.0",
+    "protractor": "^2.1.0"
   }
 }
