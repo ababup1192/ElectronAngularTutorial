@@ -14,8 +14,13 @@ html(lang="ja" ng-app="phonecatApp")
         .col-xs-2
           |Search: 
           input(ng-model="query")
+          |Sort by:
+          select(ng-model="orderProps")
+            option(value="name") Alphabetical
+            option(value="age") Newest
+            option(value="-age") Oldest
         .col-xs-10
           ul.phones
-            li(ng-repeat="phone in phones | filter:query")
+            li(ng-repeat="phone in phones | filter:query | orderBy:orderProps")
               span {{phone.name}}
               p {{phone.snippet}}
