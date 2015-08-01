@@ -19,6 +19,10 @@ gulp.task 'css', () ->
   gulp.src(['./src/**/*.css'])
       .pipe(gulp.dest('./build'))
 
+gulp.task 'assets', () ->
+  gulp.src(['./src/**/*.json'])
+      .pipe(gulp.dest('./build'))
+
 gulp.task 'bower', () ->
   jsFilter = gulpFilter('**/*.js')
   cssFilter = gulpFilter('**/*.css')
@@ -29,8 +33,8 @@ gulp.task 'bower', () ->
     .pipe(cssFilter)
     .pipe(gulp.dest('./build/css/lib'))
 
-gulp.task 'start', ['jade', 'typescript', 'bower', 'css'], () ->
+gulp.task 'start', ['jade', 'typescript', 'bower', 'css', 'assets'], () ->
   electron.start()
-  gulp.watch('./src/**/*.{jade,ts,css}', ['jade', 'typescript', 'css'])
+  gulp.watch('./src/**/*.{jade,ts,css}', ['jade', 'typescript', 'css', 'assets'])
   gulp.watch(['main.js'], electron.restart)
   gulp.watch(['./build/**/*.{html,js,css}'], electron.reload)
